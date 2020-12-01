@@ -1,0 +1,32 @@
+
+<label>Server Name</label>
+<!-- <input
+    type="text"
+    class="form-control"
+    (input)="onUpdateServerName($event)"> -->
+
+
+<input
+type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
+<!-- <p>{{ serverName }}</p> -->
+
+<button class="btn btn-primary"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()">Add Server</button>
+<p>{{ serverCreationStatus }}</p>
+<app-server></app-server>
+<app-server></app-server>
+
+<p style="background-color: aquamarine; padding: 20px;">Exercicio - DataBinding</p>
+<input
+    type="text"
+    class="form-control"
+    [(ngModel)]="username"
+    >
+<button
+    class="btn btn-primary"
+    [disabled]="username === ''"
+    (click)="username = ''">Reset Username</button>
+<p>{{ username }}</p>
