@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class ExercicioTresComponent implements OnInit {
 
   showText = false;
-  counter = 0;
-  displays: Array<number> = [];
+  log: Array<number> = [];
+  //displays: Array<number> = [];
 
   constructor() { }
 
@@ -17,18 +17,9 @@ export class ExercicioTresComponent implements OnInit {
   }
 
   onToogleDisplay(){
-    if(this.showText){
-      this.showText = false;
-    } else {
-      this.showText = true;
-    }
-    this.onCountClicks();
+    this.showText = !this.showText;
+    this.log.push(this.log.length + 1);
     
-  }
-
-  onCountClicks(){
-    this.counter = this.counter + 1;
-    this.displays.push(this.counter);
   }
 
 }

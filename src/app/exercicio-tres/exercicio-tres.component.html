@@ -8,12 +8,24 @@
 (click)="onToogleDisplay()">Display Details</button>
 
 <p *ngIf="!showText else toogleDisplay"></p>
-<p 
-*ngFor="let display of displays"
-[ngClass]="{testando: displays.length > 4}"
->{{ displays }}</p>
+
 <ng-template #toogleDisplay>
     <p>Paragrafozinho bolado para testes.</p>
 </ng-template>
+
+<div *ngFor="let logItem of log">
+    <p 
+    [ngClass]="{testando: logItem > 4}"
+    [ngStyle]="{backgroundColor: logItem > 4 ? 'blue' : 'transparent'}"
+    >{{ logItem }}</p>
+
+</div>
+
+<!-- <p 
+*ngFor="let display of displays"
+[ngClass]="{testando: displays.length > 4}"
+[ngStyle]="{backgroundColor: getColor()}"
+>{{ displays }}</p> -->
+
 
 
