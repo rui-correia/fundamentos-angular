@@ -1,2 +1,19 @@
-<h3>Ecercicio 3</h3>
-<button class="btn btn-primary">Display Details</button>
+<h3><b>Ecercicio 3</b></h3>
+<h5>1. Add a Button which says 'Display Details'.</h5>
+<h5>2. Add a paragraph with any content of your choice.</h5>
+<h5>3. Toogle the displaying of that paragraph with the button created in the first step</h5>
+<h5>4. Log all button clicks in an array and output that array below the secret paragraph</h5>
+<h5>5. Starting at the 5th log item, give all future log items a blue background (via ngStyle) and white color (ngClass)</h5>
+<button class="btn btn-primary"
+(click)="onToogleDisplay()">Display Details</button>
+
+<p *ngIf="!showText else toogleDisplay"></p>
+<p 
+*ngFor="let display of displays"
+[ngClass]="{testando: displays.length > 4}"
+>{{ displays }}</p>
+<ng-template #toogleDisplay>
+    <p>Paragrafozinho bolado para testes.</p>
+</ng-template>
+
+
