@@ -13,10 +13,10 @@
     <p>Paragrafozinho bolado para testes.</p>
 </ng-template>
 
-<div *ngFor="let logItem of log">
+<div *ngFor="let logItem of log; let i = index">
     <p 
-    [ngClass]="{testando: logItem > 4}"
-    [ngStyle]="{backgroundColor: logItem > 4 ? 'blue' : 'transparent'}"
+    [ngClass]="{testando: i > 4}"
+    [ngStyle]="{backgroundColor: i > 4 ? 'blue' : 'transparent'}"
     >{{ logItem }}</p>
 
 </div>
